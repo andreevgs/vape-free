@@ -22,37 +22,37 @@ export default defineConfig({
         configFile: 'src/styles/settings.scss',
       },
     }),
-    VitePWA({
-      registerType: 'prompt',
-      devOptions: {
-        enabled: true
-      },
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'android-chrome-192x192.png'],
-      manifest: {
-        publicPath: '/vape-free/',
-        start_url: '/vape-free/',
-        name: 'Vape Free',
-        short_name: 'Vape Free',
-        description: 'Vape Free Application',
-        theme_color: 'rgb(18,18,18)',
-        background_color: 'rgb(18,18,18)',
-        icons: [
-          {
-            src: 'img/icons/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: 'img/icons/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      },
-      workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}']
-      }
-    }),
+    // VitePWA({
+    //   registerType: 'prompt',
+    //   devOptions: {
+    //     enabled: true
+    //   },
+    //   includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'android-chrome-192x192.png'],
+    //   manifest: {
+    //     publicPath: '/vape-free/',
+    //     start_url: '/vape-free/',
+    //     name: 'Vape Free',
+    //     short_name: 'Vape Free',
+    //     description: 'Vape Free Application',
+    //     theme_color: 'rgb(18,18,18)',
+    //     background_color: 'rgb(18,18,18)',
+    //     icons: [
+    //       {
+    //         src: 'img/icons/android-chrome-192x192.png',
+    //         sizes: '192x192',
+    //         type: 'image/png'
+    //       },
+    //       {
+    //         src: 'img/icons/android-chrome-512x512.png',
+    //         sizes: '512x512',
+    //         type: 'image/png'
+    //       }
+    //     ]
+    //   },
+    //   workbox: {
+    //     globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}']
+    //   }
+    // }),
     ViteFonts({
       google: {
         families: [{
