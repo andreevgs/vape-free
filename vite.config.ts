@@ -29,7 +29,7 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'android-chrome-192x192.png'],
       manifest: {
-        start_url: '/',
+        start_url: '/vape-free/',
         name: 'Vape Free',
         short_name: 'Vape Free',
         description: 'Vape Free Application',
