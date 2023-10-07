@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
+    path: '/vape-free',
     component: () => import('@/views/Main.vue'),
   },
 ]
