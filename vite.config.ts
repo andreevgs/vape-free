@@ -10,7 +10,6 @@ import {VitePWA} from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vape-free/',
   appType: 'spa',
   plugins: [
     vue({
