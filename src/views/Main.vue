@@ -60,7 +60,7 @@
 <script lang="ts">
 import {defineComponent, onBeforeMount, onBeforeUnmount, ref} from "vue";
 import recomendations from "@/recomendations";
-import {getElapsedTime, getExpirationTime} from "../../utils/time";
+import {getElapsedTime, getExpirationTime} from "@/utils/time";
 
 export default defineComponent({
   setup() {
@@ -70,8 +70,8 @@ export default defineComponent({
     const elapsedTime = ref<null | any>({});
     const isDesireButtonDisabled = ref(false);
     const isGiveUpButtonDisabled = ref(false);
-    const desireButtonDisabledTime = ref<null | number>(null);
-    const giveUpButtonDisabledTime = ref<null | number>(null);
+    const desireButtonDisabledTime = ref<number>(0);
+    const giveUpButtonDisabledTime = ref<number>(0);
 
     let updateElapsedTimeInterval: NodeJS.Timeout;
     let disableDesireButtonInterval: NodeJS.Timeout;
@@ -79,17 +79,17 @@ export default defineComponent({
     let disableDesireButtonTimeot: NodeJS.Timeout;
 
     onBeforeMount(() => {
-      const savedStartTime = parseInt(localStorage.getItem('startTime'));
+      const savedStartTime = localStorage.getItem('startTime');
       savedStartTime ?
-        startTime.value = savedStartTime : localStorage.setItem('startTime', startTime.value.toString());
+        startTime.value = parseInt(savedStartTime) : localStorage.setItem('startTime', startTime.value.toString());
 
       updateElapsedTimeInterval = setInterval(() => {
         elapsedTime.value = getElapsedTime(startTime.value);
       }, 1000);
     });
     onBeforeUnmount(() => {
-      desireButtonDisabledTime.value = null;
-      giveUpButtonDisabledTime.value = null;
+      desireButtonDisabledTime.value = 0;
+      giveUpButtonDisabledTime.value = 0;
       clearInterval(updateElapsedTimeInterval);
       clearInterval(disableDesireButtonInterval);
       clearInterval(disableGiveUpButtonInterval);
@@ -105,7 +105,7 @@ export default defineComponent({
         desireButtonDisabledTime.value = desireButtonDisabledTime.value - 1000;
       }, 1000);
       disableDesireButtonTimeot = setTimeout(() => {
-        desireButtonDisabledTime.value = null;
+        desireButtonDisabledTime.value = 0;
         clearInterval(disableDesireButtonInterval);
         isDesireButtonDisabled.value = false;
       }, 300000);
@@ -127,8 +127,8 @@ export default defineComponent({
         giveUpButtonDisabledTime.value = giveUpButtonDisabledTime.value - 1000;
       }, 1000);
       setTimeout(() => {
-        desireButtonDisabledTime.value = null;
-        giveUpButtonDisabledTime.value = null;
+        desireButtonDisabledTime.value = 0;
+        giveUpButtonDisabledTime.value = 0;
         clearInterval(disableDesireButtonInterval);
         clearInterval(disableGiveUpButtonInterval);
         isDesireButtonDisabled.value = false;

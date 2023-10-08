@@ -1,7 +1,7 @@
 export const getElapsedTime = (milliseconds: number) => {
-  const pastDate = new Date(milliseconds);
-  const currentDate = new Date();
-  const diff = currentDate - pastDate;
+  const pastDate: number = milliseconds;
+  const currentDate: number = new Date().getTime();
+  const diff: number = currentDate - pastDate;
   const years: number = Math.floor(diff / (1000 * 60 * 60 * 24 * 365));
   const months: number = Math.floor((diff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
   const days: number = Math.floor((diff % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
@@ -17,7 +17,7 @@ export const getElapsedTime = (milliseconds: number) => {
 }
 
 export const getExpirationTime = (timeMilliseconds: number) => {
-  const time = new Date(timeMilliseconds);
+  const time: number = timeMilliseconds;
   let minutes: string | number = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
   let seconds: string | number = Math.floor((time % (1000 * 60)) / 1000);
 
