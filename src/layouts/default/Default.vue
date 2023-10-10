@@ -30,8 +30,7 @@
     height: auto !important;
   }
   .nav-button {
-    padding: 20px 0 20px 0 !important;
-    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    padding: 20px 0 50px 0 !important;
     max-width: 100% !important;
   }
 </style>
