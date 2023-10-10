@@ -3,6 +3,7 @@
     <v-main>
       <router-view />
       <v-bottom-navigation
+        class="nav-bar"
         grow
       >
         <v-btn class="nav-button" to="/vape-free/progress">
@@ -25,7 +26,12 @@
 <script lang="ts" setup>
 </script>
 <style>
+  .nav-bar {
+    height: auto !important;
+  }
   .nav-button {
+    padding: 20px 0 20px 0 !important;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
     max-width: 100% !important;
   }
 </style>
