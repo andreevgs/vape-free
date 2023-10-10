@@ -30,7 +30,6 @@
       <h3 class="text-h5">ваша жизнь стала дольше на <br/><span class="text-h4">20 МИНУТ</span></h3>
     </div>
     <div class="controls d-flex flex-column">
-      <v-btn variant="tonal" size="x-large" prepend-icon="mdi-cog">настройки</v-btn>
       <v-btn
         variant="tonal"
         size="x-large"
